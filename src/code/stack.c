@@ -18,12 +18,29 @@ int bof(char *str)
 
     // The following statement has a buffer overflow problem 
     strcpy(buffer, str);       
+    // printf("%p\n", buffer);
 
     return 1;
 }
 
-int main(int argc, char **argv)
+int main(int argc, char **argv, char** envp)
 {
+    // 1 = suppress env printing
+    // 0 = enable env printing
+    // if(argc > 1) {
+    //     int suppress_env = atoi(argv[1]);
+    //     if(suppress_env == 0) {
+    //         for (int i = 0; envp[i]; i++) {
+    //             printf("%p: %s\n", envp[i], envp[i]);
+    //         }
+    //     }
+    // }
+
+    // for (int i = 0; envp[i]; i++) {
+    //     printf("%p: %s\n", envp[i], envp[i]);
+    // }
+    
+
     char str[517];
     FILE *badfile;
 
